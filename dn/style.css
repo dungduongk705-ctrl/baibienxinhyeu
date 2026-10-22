@@ -1,0 +1,107 @@
+/* Hiệu ứng cuộn trang mượt khi bấm các liên kết menu */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Tùy chỉnh thanh điều hướng Navbar */
+.custom-navbar {
+    background-color: rgba(13, 110, 253, 0.9) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Hiệu ứng gạch chân chạy ra khi rê chuột vào menu */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 2px;
+    left: 50%;
+    background-color: #ffc107;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
+
+/* Khung chứa tổng thể các section (bo góc, tạo đổ bóng, nền sáng) */
+.section-box {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+}
+
+/* Hiệu ứng phóng to nhẹ hình ảnh khi rê chuột vào card */
+.img-zoom-container {
+    overflow: hidden;
+    position: relative;
+}
+
+.img-zoom-container img {
+    transition: transform 0.5s ease;
+}
+
+.card-destination:hover .img-zoom-container img,
+.card-hotel:hover .img-zoom-container img {
+    transform: scale(1.08);
+}
+
+/* Tiêu đề chính của các section */
+.section-title {
+    font-weight: 800;
+    color: #0d6efd;
+    letter-spacing: -0.5px;
+}
+
+/* Tùy chỉnh riêng cho Card Khách sạn và Đánh giá */
+.card-hotel, .card-testimonial {
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    background: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hiệu ứng nhấc cao card khi rê chuột vào */
+.card-hotel:hover, .card-testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Màu sắc và khoảng cách cho số sao đánh giá */
+.star-rating {
+    color: #ffc107;
+    letter-spacing: 2px;
+}
+
+/* Định dạng chữ hiển thị giá tiền (Màu đỏ nổi bật) */
+.price-text {
+    color: #dc3545;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Định dạng ảnh đại diện (avatar) hình tròn cho phần đánh giá */
+.avatar-img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Giao diện khối chân trang (Footer) */
+.footer-custom {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 60px 0 25px 0;
+}
